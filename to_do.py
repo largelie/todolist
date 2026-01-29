@@ -118,7 +118,6 @@ def ready(to_do_list):
     
     deleted = int(input("Введите номер задачи для пометки как выполненной и ее удаления:\n"))
     
-
     if 1 <= deleted <= len(to_do_list):
         deleted -= 1
         to_do_list.pop(deleted)
@@ -128,6 +127,52 @@ def ready(to_do_list):
 
         time.sleep(3)
         os.system("cls")
+
+
+
+# maybe later реализация сначала пометки как выполненной и только потом удаление через отдельные функции
+
+
+# def ready(to_do_list):
+#     os.system("cls")
+#     if not to_do_list:
+#         print("Cписок задач пуст")
+#         time.sleep(3)
+#         os.system("cls")
+#         return
+    
+#     deleted = int(input("Введите номер задачи для пометки как выполненной и ее удаления:\n"))
+    
+#     if 1 <= deleted <= len(to_do_list):
+#         deleted -= 1
+#         to_do_list.pop(deleted)
+#         print("Задача удалена.\n")
+
+#         saving_tasks()
+
+#         time.sleep(3)
+#         os.system("cls")
+
+
+# def delete_note():
+#     os.system("cls")
+#     if not to_do_list:
+#         print("Cписок задач пуст")
+#         time.sleep(3)
+#         os.system("cls")
+#         return
+    
+#     delete_the_note = int(input("Введите номер выполненной задачи для её удаления:\n"))
+
+#     if 1 <= delete_the_note <= len(to_do_list):
+#         delete_the_note -= 1
+#         to_do_list.pop(delete_the_note)
+#         print("Заметка удалена.\n")
+
+#         saving_tasks()
+
+#         time.sleep(3)
+#         os.system("cls")
 
 def saving_tasks():
     with open('todo.json', 'w', encoding='utf-8') as f:
